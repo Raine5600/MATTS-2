@@ -14,8 +14,8 @@
       --bg: #02040a;
       --text: #ffffff;
       --text-secondary: #99A1AF;
-      --card-bg: rgba(255,255,255,0.24);
-      --card-border: rgba(255,255,255,0.44);
+      --card-bg: rgba(255,255,255,0.92);
+      --card-border: rgba(0,0,0,0.15);
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -222,7 +222,7 @@
     }
     .explore-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(139,197,61,0.3);
+      border-color: rgba(139,197,61,0.6);
       box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 40px rgba(139,197,61,0.07);
     }
     .explore-img-wrap { overflow: hidden; position: relative; }
@@ -255,6 +255,10 @@
     .explore-card:hover .explore-link { gap: 10px; }
     @media (max-width: 1024px) { .explore-grid { grid-template-columns: repeat(2,1fr); } }
     @media (max-width: 580px) { .explore-grid { grid-template-columns: 1fr; } }
+
+    /* CARD TEXT — dark text for opaque white cards */
+    .explore-card, .explore-card-title { color: #111 !important; }
+    .explore-card-desc { color: #444 !important; }
 
     /* FADE IN */
     .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
