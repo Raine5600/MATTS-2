@@ -191,8 +191,12 @@
 
     /* CARD TEXT — dark text for opaque white cards */
     .service-big-card, .service-big-title { color: #111 !important; }
-    .service-big-desc, .service-features li, .process-step-desc { color: #444 !important; }
-    .process-step-title { color: #111 !important; }
+    .service-big-desc, .service-features li { color: #444 !important; }
+    /* PROCESS STEPS — sit on dark video, must be white */
+    .process-step-title { color: #fff !important; }
+    .process-step-desc { color: rgba(255,255,255,0.75) !important; }
+    /* SECTION HEADINGS on dark bg */
+    .section-title, .section-sub { color: #fff !important; }
     .service-features li::before {
       content: ''; width: 6px; height: 6px; border-radius: 50%;
       background: var(--accent); flex-shrink: 0;
