@@ -89,18 +89,23 @@
       .nav-cta { padding: 6px 10px; font-size: 0.72rem !important; }
     }
 
-    /* HERO */
-    #hero {
-      position: relative; height: 100vh; width: 100%;
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden; z-index: 1;
+    /* ── VIDEO BACKDROP ── */
+    #video-bg {
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 100vh; z-index: 1;
+      overflow: hidden; background: #030d03;
+      pointer-events: none;
     }
-    .hero-video {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; z-index: 1;
+    #bg-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
     }
-    .hero-overlay {
-      position: absolute; inset: 0; z-index: 2;
+    #video-overlay {
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 100vh; z-index: 2; pointer-events: none;
       background: linear-gradient(
         to bottom,
         rgba(2,4,10,0.45) 0%,
@@ -108,6 +113,13 @@
         rgba(2,4,10,0.6) 80%,
         rgba(2,4,10,1) 100%
       );
+    }
+
+    /* HERO */
+    #hero {
+      position: relative; height: 100vh; width: 100%;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 3;
     }
     .hero-content {
       position: relative; z-index: 3; text-align: center; padding: 0 24px;
@@ -278,6 +290,15 @@
 <body>
 
   <div id="scrollProgress"></div>
+
+  <!-- VIDEO BACKDROP -->
+  <div id="video-bg">
+    <video id="bg-video" muted playsinline preload="auto">
+      <source src="matts-lawn-compressed.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div id="video-overlay"></div>
+
   <canvas id="starscape"></canvas>
 
   <!-- NAVBAR -->
@@ -298,10 +319,6 @@
 
   <!-- HERO -->
   <section id="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="hero.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-badge">Serving SW Michigan &amp; N. Indiana</div>
       <h1 class="hero-title">
@@ -446,6 +463,24 @@
       scrollProgress.style.width = pct + '%';
       navbar.classList.toggle('nav-scrolled', window.scrollY > 80);
     }, { passive: true });
+
+    // ── VIDEO BACKDROP: play once → pause 3s → play again ──
+    const bgVideo = document.getElementById('bg-video');
+    bgVideo.addEventListener('ended', () => {
+      setTimeout(() => {
+        bgVideo.currentTime = 0;
+        bgVideo.play().catch(() => {});
+      }, 3000);
+    });
+    bgVideo.play().catch(() => {
+      const unlock = () => {
+        bgVideo.play().catch(() => {});
+        document.removeEventListener('click', unlock);
+        document.removeEventListener('touchstart', unlock);
+      };
+      document.addEventListener('click', unlock);
+      document.addEventListener('touchstart', unlock);
+    });
 
     // FADE IN
     const fadeObserver = new IntersectionObserver((entries) => {

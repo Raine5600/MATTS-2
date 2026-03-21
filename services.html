@@ -41,33 +41,6 @@
       z-index: 10000; transition: width 0.08s linear; pointer-events: none;
     }
 
-    /* ── VIDEO BACKDROP ── */
-    #video-bg {
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 100vh; z-index: 0;
-      overflow: hidden; background: #030d03;
-      pointer-events: none;
-    }
-    #bg-video {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      display: block;
-    }
-    /* Dark gradient overlay — keeps white text readable */
-    #video-overlay {
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 100vh; z-index: 1; pointer-events: none;
-      background: linear-gradient(
-        to bottom,
-        rgba(2,4,10,0.52) 0%,
-        rgba(2,4,10,0.28) 25%,
-        rgba(2,4,10,0.28) 75%,
-        rgba(2,4,10,0.70) 100%
-      );
-    }
-
     /* NAV */
     #navbar { position: fixed; top: 12px; left: 0; right: 0; z-index: 1000; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); }
     .nav-inner {
@@ -291,15 +264,6 @@
 <body>
   <div id="scrollProgress"></div>
 
-  <!-- VIDEO BACKDROP -->
-  <div id="video-bg">
-    <video id="bg-video" muted playsinline preload="auto">
-      
-      <source src="matts-lawn-compressed.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <div id="video-overlay"></div>
-
   <nav id="navbar">
     <div class="nav-inner">
       <div class="nav-logo">
@@ -467,28 +431,6 @@
   </footer>
 
   <script>
-    // ── VIDEO BACKDROP: play once → pause 10s → play again ──
-    const bgVideo = document.getElementById('bg-video');
-
-    bgVideo.addEventListener('ended', () => {
-      // Video finished — hold on the last frame for 10 seconds, then replay
-      setTimeout(() => {
-        bgVideo.currentTime = 0;
-        bgVideo.play().catch(() => {});
-      }, 3000);
-    });
-
-    // Autoplay on load
-    bgVideo.play().catch(() => {
-      // Browser blocked autoplay — wait for first user interaction
-      const unlock = () => {
-        bgVideo.play().catch(() => {});
-        document.removeEventListener('click', unlock);
-        document.removeEventListener('touchstart', unlock);
-      };
-      document.addEventListener('click', unlock);
-      document.addEventListener('touchstart', unlock);
-    });
 
     // SCROLL
     const scrollProgress = document.getElementById('scrollProgress');
