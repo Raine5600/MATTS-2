@@ -76,7 +76,18 @@
       transition: box-shadow 0.3s ease, transform 0.2s ease !important;
     }
     .nav-cta:hover { box-shadow: 0 0 28px rgba(139,197,61,0.55) !important; transform: translateY(-1px); }
-    @media (max-width: 768px) { .nav-links { display: none; } .nav-inner { padding: 10px 24px; } }
+    @media (max-width: 768px) {
+      .nav-inner { padding: 10px 16px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 0.78rem; }
+      .nav-cta { padding: 7px 14px; }
+      .nav-logo img { height: 28px; }
+    }
+    @media (max-width: 480px) {
+      .nav-links { gap: 10px; }
+      .nav-links a { font-size: 0.72rem; }
+      .nav-cta { padding: 6px 10px; font-size: 0.72rem !important; }
+    }
 
     /* HERO */
     #hero {
@@ -275,7 +286,7 @@
       <div class="nav-logo">
         <img src="https://mattslawncare.biz/wp-content/uploads/2023/02/matts_new_trans.png" alt="Matt's Lawn Care" />
       </div>
-      <div class="nav-links">
+      <div class="nav-links" id="navLinks">
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
         <a href="work.html">Our Work</a>
