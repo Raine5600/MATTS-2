@@ -9,8 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --accent: #8bc53d;
-      --accent-rgb: 139, 197, 61;
+      --accent: #55b462;
+      --accent-rgb: 85, 180, 98;
+      --blue: #5495b5;
       --bg: #02040a;
       --text: #ffffff;
       --text-secondary: #99A1AF;
@@ -22,7 +23,7 @@
     ::selection { background: var(--accent); color: #000; }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: rgba(139,197,61,0.3); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb { background: rgba(85,180,98,0.3); border-radius: 3px; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Open Sans', sans-serif;
@@ -36,7 +37,7 @@
     /* SCROLL PROGRESS */
     #scrollProgress {
       position: fixed; top: 0; left: 0; height: 3px; width: 0%;
-      background: linear-gradient(90deg, var(--accent), #b8e04a);
+      background: linear-gradient(90deg, var(--blue), var(--accent));
       z-index: 10000; transition: width 0.08s linear; pointer-events: none;
     }
 
@@ -72,10 +73,10 @@
     .nav-cta {
       background: var(--accent) !important; color: #000 !important;
       padding: 9px 22px; border-radius: 100px; font-weight: 700 !important;
-      box-shadow: 0 0 18px rgba(139,197,61,0.35);
+      box-shadow: 0 0 18px rgba(85,180,98,0.35);
       transition: box-shadow 0.3s ease, transform 0.2s ease !important;
     }
-    .nav-cta:hover { box-shadow: 0 0 28px rgba(139,197,61,0.55) !important; transform: translateY(-1px); }
+    .nav-cta:hover { box-shadow: 0 0 28px rgba(85,180,98,0.55) !important; transform: translateY(-1px); }
     @media (max-width: 768px) {
       .nav-inner { padding: 12px 12px; }
       .nav-links { gap: 6px; }
@@ -128,14 +129,14 @@
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 6px 18px; border-radius: 100px; margin-bottom: 28px;
-      border: 1px solid rgba(139,197,61,0.4); background: transparent;
-      color: var(--accent); font-size: 0.68rem; font-weight: 700;
+      border: 1px solid rgba(84,149,181,0.5); background: transparent;
+      color: var(--blue); font-size: 0.68rem; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.2em; font-family: 'Open Sans', sans-serif;
     }
     .hero-badge::before {
       content: ''; width: 7px; height: 7px; border-radius: 50%;
-      background: var(--accent); display: block;
-      box-shadow: 0 0 8px var(--accent); animation: pulse 2s infinite;
+      background: var(--blue); display: block;
+      box-shadow: 0 0 8px var(--blue); animation: pulse 2s infinite;
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
@@ -161,9 +162,9 @@
       padding: 16px 36px; border-radius: 12px;
       font-weight: 700; font-size: 1rem; text-decoration: none;
       font-family: 'Tajawal', sans-serif;
-      box-shadow: 0 0 24px rgba(139,197,61,0.4); transition: all 0.3s ease;
+      box-shadow: 0 0 24px rgba(85,180,98,0.4); transition: all 0.3s ease;
     }
-    .btn-primary:hover { box-shadow: 0 0 40px rgba(139,197,61,0.6); transform: translateY(-3px); }
+    .btn-primary:hover { box-shadow: 0 0 40px rgba(85,180,98,0.6); transform: translateY(-3px); }
     .btn-secondary {
       display: inline-flex; align-items: center; gap: 8px;
       background: transparent; color: #fff;
@@ -198,7 +199,7 @@
       text-align: center; margin-bottom: 56px;
     }
     .section-label {
-      display: inline-block; color: var(--accent); font-size: 0.65rem;
+      display: inline-block; color: var(--blue); font-size: 0.65rem;
       font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em;
       margin-bottom: 14px; font-family: 'Open Sans', sans-serif;
     }
@@ -222,8 +223,8 @@
     }
     .explore-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(139,197,61,0.6);
-      box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 40px rgba(139,197,61,0.07);
+      border-color: rgba(85,180,98,0.6);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 40px rgba(85,180,98,0.07);
     }
     .explore-img-wrap { overflow: hidden; position: relative; }
     .explore-img {
