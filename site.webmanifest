@@ -1,0 +1,16 @@
+{
+  "name": "Rainey Lawncare & Snow Plow LLC",
+  "short_name": "Rainey Lawncare",
+  "description": "Full-service lawn care, landscaping, and snow removal in Southwest Michigan and Northern Indiana.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#02040a",
+  "theme_color": "#55b462",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "358x358",
+      "type": "image/png"
+    }
+  ]
+}
