@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get a Quote — Rainey Lawncare & Snow Plow LLC</title>
-  <meta name="description" content="Request a free quote from Rainey Lawncare &amp; Snow Plow LLC. Fast response, honest pricing — lawn care, landscaping, and snow removal in SW Michigan &amp; N. Indiana. Call 574.274.0643." />
+  <title>Contact Us — Rainey Lawncare & Snow Plow LLC</title>
+  <meta name="description" content="Call Rainey Lawncare &amp; Snow Plow LLC for a free estimate. Lawn care, landscaping, and snow removal in SW Michigan &amp; N. Indiana. Call Cameron at 574.274.0643." />
   <meta name="author" content="Rainey Lawncare &amp; Snow Plow LLC" />
   <meta name="theme-color" content="#55b462" />
   <meta name="robots" content="index, follow" />
@@ -14,7 +14,7 @@
   <link rel="manifest" href="site.webmanifest" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Rainey Lawncare &amp; Snow Plow LLC" />
-  <meta property="og:title" content="Get a Quote — Rainey Lawncare &amp; Snow Plow LLC" />
+  <meta property="og:title" content="Contact Us — Rainey Lawncare &amp; Snow Plow LLC" />
   <meta property="og:description" content="Get a free on-site estimate for lawn care, landscaping, or snow removal. Call Cameron at 574.274.0643." />
   <meta property="og:url" content="https://matts-2.vercel.app/quote.html" />
   <meta property="og:image" content="https://matts-2.vercel.app/logo.png" />
@@ -69,7 +69,7 @@
 
     /* MAIN LAYOUT */
     .contact-section{position:relative;z-index:1;padding:40px 32px 120px;}
-    .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;max-width:1100px;margin:0 auto;align-items:start;}
+    .contact-grid{max-width:640px;margin:0 auto;}
 
     /* INFO PANEL */
     .info-panel{display:flex;flex-direction:column;gap:32px;}
@@ -81,67 +81,9 @@
     .info-card-link{color:#111;text-decoration:none;font-weight:600;font-size:0.9rem;display:inline-block;margin-top:10px;transition:opacity 0.2s;}
     .info-card-link:hover{opacity:0.8;}
 
-    /* FORM */
-    .form-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:24px;padding:48px;}
-    .form-title{font-family:'Tajawal',sans-serif;font-size:1.8rem;font-weight:900;margin-bottom:8px;}
-    .form-sub{color:var(--text-secondary);font-size:0.88rem;margin-bottom:36px;line-height:1.6;}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
-    .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
-    .form-label{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);}
-    .form-input, .form-select, .form-textarea{
-      background:rgba(255,255,255,0.04);
-      border:1px solid var(--card-border);
-      border-radius:10px;
-      padding:14px 16px;
-      color:#111;
-      font-family:'Open Sans',sans-serif;
-      font-size:0.9rem;
-      transition:border-color 0.2s ease, box-shadow 0.2s ease;
-      outline:none;
-      width:100%;
-    }
-    .form-input:focus,.form-select:focus,.form-textarea:focus{
-      border-color:rgba(85,180,98,0.5);
-      box-shadow:0 0 0 3px rgba(85,180,98,0.08);
-    }
-    .form-input::placeholder,.form-textarea::placeholder{color:rgba(0,0,0,0.45);}
-    .form-select option{background:#0e1a0e;color:#fff;}
-    .form-textarea{resize:vertical;min-height:120px;}
-    .form-services{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;}
-    .service-check{display:none;}
-    .service-pill{
-      padding:8px 18px;border-radius:100px;border:1px solid var(--card-border);
-      background:var(--card-bg);color:rgba(0,0,0,0.6);
-      font-size:0.78rem;font-weight:600;cursor:pointer;
-      transition:all 0.2s ease;font-family:'Open Sans',sans-serif;
-      user-select:none;
-    }
-    .service-check:checked + .service-pill{border-color:var(--accent);color:#000;background:var(--accent);box-shadow:0 0 14px rgba(85,180,98,0.55);font-weight:700;}
-    .submit-btn{
-      width:100%;padding:18px;border-radius:12px;
-      background:var(--accent);color:#000;
-      border:none;cursor:pointer;
-      font-family:'Tajawal',sans-serif;font-size:1.1rem;font-weight:900;
-      letter-spacing:-0.01em;
-      box-shadow:0 0 24px rgba(85,180,98,0.4);
-      transition:all 0.3s ease;margin-top:8px;
-    }
-    .submit-btn:hover{box-shadow:0 0 40px rgba(85,180,98,0.6);transform:translateY(-2px);}
-    .form-disclaimer{font-size:0.74rem;color:rgba(0,0,0,0.45);text-align:center;margin-top:14px;line-height:1.5;}
-
-    /* SUCCESS STATE */
-    .form-success{display:none;text-align:center;padding:40px 0;}
-    .form-success.show{display:block;}
-    .success-icon{font-size:4rem;margin-bottom:20px;display:block;}
-    .success-title{font-family:'Tajawal',sans-serif;font-size:2rem;font-weight:900;margin-bottom:12px;color:var(--accent);}
-    .success-text{color:var(--text-secondary);line-height:1.6;}
-
-    @media(max-width:900px){.contact-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
-
     /* CARD TEXT — dark text for opaque white cards */
-    .info-card, .info-card-title, .form-card, .form-title { color: #111 !important; }
-    .info-card-text, .form-sub { color: #444 !important; }
-    .form-label { color: rgba(0,0,0,0.7) !important; }
+    .info-card, .info-card-title { color: #111 !important; }
+    .info-card-text { color: #444 !important; }
 
     footer{position:relative;z-index:1;border-top:1px solid var(--card-border);padding:60px 32px 40px;}
     .footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:32px;}
@@ -167,21 +109,21 @@
         <a href="about.html">About</a>
         <a href="work.html">Our Work</a>
         <a href="reviews.html">Reviews</a>
-        <a href="quote.html" class="nav-cta active">Get a Quote</a>
+        <a href="tel:5742740643" class="nav-cta active">Call Us</a>
       </div>
     </div>
   </nav>
 
   <div class="page-hero">
     <span class="page-hero-label">Free Estimate</span>
-    <h1 class="page-hero-title">Get a <span class="green">Free</span><br />Quote Today</h1>
-    <p class="page-hero-sub">Fast response, honest pricing, no pressure. We'll get back to you quickly with a clear estimate for your property.</p>
+    <h1 class="page-hero-title">Call for a <span class="green">Free</span><br />Estimate</h1>
+    <p class="page-hero-sub">Fast response, honest pricing, no pressure. Call Cameron directly to schedule a free on-site estimate for your property.</p>
   </div>
 
   <!-- PHONE CALLOUT -->
   <div class="phone-section fade-in">
     <a href="tel:5742740643" class="phone-big">574.274.0643</a>
-    <p class="phone-label">Prefer to call? We pick up. Mon – Sat, 7am – 7pm.</p>
+    <p class="phone-label">We pick up. Mon – Sat, 7am – 7pm.</p>
   </div>
 
   <!-- CONTACT GRID -->
@@ -204,85 +146,12 @@
         <div class="info-card fade-in fade-in-delay-1">
           <span class="info-card-icon">⏱️</span>
           <h4 class="info-card-title">What to Expect</h4>
-          <p class="info-card-text">After submitting, we'll reach out within 1 business day to schedule a free on-site estimate. No commitment required.</p>
+          <p class="info-card-text">Give us a call and we'll schedule a free on-site estimate at your convenience. No commitment required.</p>
         </div>
         <div class="info-card fade-in fade-in-delay-1">
           <span class="info-card-icon">✅</span>
           <h4 class="info-card-title">Licensed &amp; Insured</h4>
           <p class="info-card-text">Rainey Lawncare is fully licensed and insured for residential and commercial work across Michigan and Indiana.</p>
-        </div>
-      </div>
-
-      <!-- FORM -->
-      <div class="form-card fade-in">
-        <div id="quoteForm">
-          <h3 class="form-title">Request Your Estimate</h3>
-          <p class="form-sub">Fill out the form and we'll be in touch within 1 business day.</p>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">First Name</label>
-              <input type="text" class="form-input" placeholder="John" />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Last Name</label>
-              <input type="text" class="form-input" placeholder="Smith" />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">Phone Number</label>
-              <input type="tel" class="form-input" placeholder="(574) 274-0643" />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Email Address</label>
-              <input type="email" class="form-input" placeholder="john@email.com" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Property Address</label>
-            <input type="text" class="form-input" placeholder="123 Main St, Niles, MI 49120" />
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Property Type</label>
-            <select class="form-select">
-              <option value="" disabled selected>Select property type…</option>
-              <option>Residential — Single Family</option>
-              <option>Residential — Multi-Family</option>
-              <option>Commercial — Small Business</option>
-              <option>Commercial — Large Property</option>
-              <option>Industrial / Other</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Services Needed</label>
-            <div class="form-services">
-              <input type="checkbox" class="service-check" id="s1" /><label class="service-pill" for="s1">🌿 Lawn Maintenance</label>
-              <input type="checkbox" class="service-check" id="s2" /><label class="service-pill" for="s2">💧 Landscaping</label>
-              <input type="checkbox" class="service-check" id="s3" /><label class="service-pill" for="s3">💧 Irrigation</label>
-              <input type="checkbox" class="service-check" id="s4" /><label class="service-pill" for="s4">❄️ Snow Removal</label>
-              <input type="checkbox" class="service-check" id="s5" /><label class="service-pill" for="s5">🚜 Excavation</label>
-              <input type="checkbox" class="service-check" id="s6" /><label class="service-pill" for="s6">🌾 Brush Hogging</label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Additional Details</label>
-            <textarea class="form-textarea" placeholder="Describe your property, project, or any special requirements…"></textarea>
-          </div>
-
-          <button class="submit-btn" onclick="submitForm()">Send My Quote Request →</button>
-          <p class="form-disclaimer">We respect your privacy. Your information is never sold or shared.</p>
-        </div>
-
-        <div class="form-success" id="formSuccess">
-          <span class="success-icon">✅</span>
-          <h3 class="success-title">Request Received!</h3>
-          <p class="success-text">Thanks for reaching out! Cameron will be in touch within 1 business day to schedule your free on-site estimate.<br /><br />In the meantime, feel free to call directly at <strong style="color:var(--accent);">574.274.0643</strong>.</p>
         </div>
       </div>
 
@@ -319,11 +188,6 @@
     window.addEventListener('scroll',()=>{const pct=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;scrollProgress.style.width=pct+'%';navbar.classList.toggle('nav-scrolled',window.scrollY>80);},{passive:true});
     const fadeObserver=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');fadeObserver.unobserve(entry.target);}});},{threshold:0.08});
     document.querySelectorAll('.fade-in').forEach(el=>fadeObserver.observe(el));
-
-    function submitForm(){
-      document.getElementById('quoteForm').style.display='none';
-      document.getElementById('formSuccess').classList.add('show');
-    }
   </script>
 </body>
 </html>
